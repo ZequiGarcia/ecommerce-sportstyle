@@ -1,7 +1,6 @@
-
 import React, { useState } from 'react';
 import { useAllProduct, useFilter } from '../../hooks';
-import { Filter, Product } from '../components';
+import {Filter, Header, Product } from '../components';
 
 export const ProductPage = () => {
     const { productos } = useAllProduct(); 
@@ -23,6 +22,7 @@ export const ProductPage = () => {
 
     return (
         <>
+        <Header />
             <Filter onFilter={handleFilter} onReset={handleResetFilter} />
             <Product productos={filtered ? filteredProducts : productos} /> {/* Pasamos los productos filtrados si se aplicó un filtro, de lo contrario, pasamos todos los productos */}
         </>
