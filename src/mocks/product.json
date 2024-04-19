@@ -1,0 +1,565 @@
+{
+    "productos": [
+        {
+          "id": 1,
+          "category": "Soccer",
+          "name": "Balón de Fútbol",
+          "image": "https://walmartsv.vtexassets.com/arquivos/ids/312875/Pelota-Athletic-Works-No-5-Unidad-1-14541.jpg?v=638206912272830000",
+          "description": "Balón diseñado para su uso en partidos de fútbol. Ideal para entrenamientos y competiciones.",
+          "quantity": 50,
+          "company": "Adidas",
+          "price": 25.99
+        },
+        {
+          "id": 2,
+          "category": "Soccer",
+          "name": "Calcetines de Fútbol",
+          "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/5be7e7ea-6287-4d31-a98f-28dbfd19ae88/dri-fit-strike-medias-de-futbol-hasta-la-rodilla-b6SQZN.png",
+          "description": "Calcetines de fútbol transpirables y acolchados. Ideales para la práctica de fútbol en todas las condiciones.",
+          "quantity": 100,
+          "company": "Nike",
+          "price": 9.99
+        },
+        {
+          "id": 3, 
+          "category": "Soccer",
+          "name": "Conos de Entrenamiento",
+          "image": "https://http2.mlstatic.com/D_NQ_NP_754151-MEC46834929161_072021-O.webp",
+          "description": "Conos de entrenamiento duraderos y de colores brillantes. Perfectos para mejorar la agilidad y la precisión en el fútbol.",
+          "quantity": 30,
+          "company": "SKLZ",
+          "price": 14.99
+        },
+        {
+          "id": 4, 
+          "category": "Soccer",
+          "name": "Guantes de Portero",
+          "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/041813/01/fnd/PNA/fmt/png/Guantes-de-portero-de-f%C3%BAtbol-de-corte-negativo-ULTRA-Ultimate-1",
+          "description": "Guantes acolchados y de agarre firme para porteros de fútbol. Ofrecen protección y control durante el juego.",
+          "quantity": 20,
+          "company": "Puma",
+          "price": 39.99
+        },
+        {
+          "id": 5, 
+          "category": "Soccer",
+          "name": "Pantalones Cortos de Fútbol",
+          "image": "https://i.ebayimg.com/thumbs/images/g/gSAAAOSwN3lcbwQp/s-l640.jpg",
+          "description": "Pantalones cortos de fútbol ligeros y transpirables. Ideales para entrenamientos y partidos.",
+          "quantity": 40,
+          "company": "Adidas",
+          "price": 19.99
+        },
+        {
+          "id": 6, 
+          "category": "Soccer",
+          "name": "Bolsa de Equipo de Fútbol",
+          "image": "data:image/jpeg;base64,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",
+          "description": "Bolsa espaciosa y resistente para transportar todo el equipo de fútbol. Con bolsillos adicionales para accesorios.",
+          "quantity": 15,
+          "company": "Under Armour",
+          "price": 49.95
+        },
+        {
+          "id": 7, 
+          "category": "Soccer",
+          "name": "Camiseta de Entrenamiento",
+          "image": "https://static.privatesportshop.com/img/p/4691257-13686245-thickbox.jpg",
+          "description": "Camiseta de entrenamiento ligera y de secado rápido. Perfecta para sesiones intensas de práctica de fútbol.",
+          "quantity": 60,
+          "company": "Nike",
+          "price": 29.99
+        },
+        {
+          "id": 8, 
+          "category": "Tennis",
+          "name": "Raqueta de Tenis",
+          "image": "https://www.wilsonstore.com.ar/cdn/shop/products/8ee62bbd-1974-4940-a818-322bc5c062ee_1500x.jpg?v=1692194053",
+          "description": "Raqueta ligera y resistente diseñada para jugar al tenis. Apta para jugadores de todos los niveles.",
+          "quantity": 30,
+          "company": "Wilson",
+          "price": 89.95
+        },
+        {
+          "id": 9, 
+          "category": "Tennis",
+          "name": "Pelotas de Tenis",
+          "image": "https://walmartsv.vtexassets.com/arquivos/ids/267198/Pelotas-de-tenis-Athletic-works-Modelo-WCO2101-3-24897.jpg?v=637998250838630000",
+          "description": "Pelotas de tenis duraderas y de alta calidad. Aprobadas para torneos y competiciones.",
+          "quantity": 100,
+          "company": "Penn",
+          "price": 4.99
+        },
+        {
+          "id": 10,
+          "category": "Tennis",
+          "name": "Grip de Raqueta",
+          "image": "https://m.media-amazon.com/images/I/611IEGCe9rL._AC_UF894,1000_QL80_.jpg",
+          "description": "Grip de raqueta antideslizante y absorbente. Proporciona un agarre sólido durante el juego.",
+          "quantity": 50,
+          "company": "Gamma",
+          "price": 7.99
+        },
+        {
+          "id": 11,
+          "category": "Tennis",
+          "name": "Zapatillas de Tenis",
+          "image": "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1638789260-41ElIKMvkoS._SL500_.jpg?crop=1xw:1.00xh;center,top&resize=980:*",
+          "description": "Zapatillas de tenis diseñadas para ofrecer estabilidad y tracción en todas las superficies de juego.",
+          "quantity": 40,
+          "company": "Asics",
+          "price": 99.99
+        },
+        {
+          "id": 12,
+          "category": "Tennis",
+          "name": "Mochila de Tenis",
+          "image": "https://m.media-amazon.com/images/I/51NfLrNR2uL._AC_UF1000,1000_QL80_.jpg",
+          "description": "Mochila espaciosa y funcional para transportar equipo de tenis. Con compartimentos especiales para raquetas y accesorios.",
+          "quantity": 20,
+          "company": "Babolat",
+          "price": 79.95
+        },
+        {
+          "id": 13,
+          "category": "Tennis",
+          "name": "Overgrip de Raqueta",
+          "image": "https://http2.mlstatic.com/D_NQ_NP_930814-CBT70964298441_082023-O.webp",
+          "description": "Overgrip de raqueta que proporciona una sensación suave y cómoda. Ideal para mejorar el agarre y la comodidad durante el juego.",
+          "quantity": 60,
+          "company": "Head",
+          "price": 5.99
+        },
+        {
+          "id": 14,
+          "category": "Tennis",
+          "name": "Visera de Tenis",
+          "image": "https://d22fxaf9t8d39k.cloudfront.net/5a6046c955436b72aa4bc79832e2285f4dbb1f91e9438a67056c20da8599500a64101.png",
+          "description": "Visera ligera y ajustable para proteger los ojos del sol durante el juego. Con tecnología que absorbe la humedad para mantener la frescura.",
+          "quantity": 80,
+          "company": "Nike",
+          "price": 24.99
+        },
+        {
+          "id": 15,
+          "category": "Basketball",
+          "name": "Balón de Baloncesto",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTR4pTmaFAXi8rj_9_uKvLiqaBocS3JH3uIv8epE56GcA&s",
+          "description": "Balón oficial de baloncesto con un diseño duradero y un buen agarre. Adecuado para juegos en interiores y exteriores.",
+          "quantity": 40,
+          "company": "Spalding",
+          "price": 29.99
+        },
+        {
+          "id": 16,
+          "category": "Basketball",
+          "name": "Canilleras de Baloncesto",
+          "image": "https://m.media-amazon.com/images/I/71vnr28Ao9L._AC_UF1000,1000_QL80_.jpg",
+          "description": "Canilleras acolchadas y ligeras para proteger las espinillas durante el juego de baloncesto. Ajustables y cómodas de llevar.",
+          "quantity": 30,
+          "company": "Nike",
+          "price": 19.99
+        },
+        {
+          "id": 17,
+          "category": "Basketball",
+          "name": "Red de Baloncesto",
+          "image": "https://i5.walmartimages.com.mx/mg/gm/3pp/asr/6ca591fa-f7a3-43be-bb05-a73d02879719.b1bae2eede2f485b40285fea84768362.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF",
+          "description": "Red de baloncesto duradera y resistente a la intemperie. Se adapta a aros estándar de baloncesto.",
+          "quantity": 25,
+          "company": "Spalding",
+          "price": 14.99
+        },
+        {
+          "id": 18,
+          "category": "Basketball",
+          "name": "Camiseta de Baloncesto",
+          "image": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/691a4f43-03e0-4a48-be81-b7c29b042bb2/chicago-bulls-icon-edition-2022-23-camiseta-dri-fit-nba-swingman-6TnMl5.png",
+          "description": "Camiseta de baloncesto transpirable y de secado rápido. Diseño cómodo para movimientos libres durante el juego.",
+          "quantity": 35,
+          "company": "Under Armour",
+          "price": 34.99
+        },
+        {
+          "id": 19,
+          "category": "Basketball",
+          "name": "Tabla de Baloncesto",
+          "image": "https://contents.mediadecathlon.com/p1749014/k$ac6f30d9b39ce654d63c3ab9c48328e1/canasta-de-basquetbol-sb100-para-fijar-a-la-pared-junior-y-adulto-negro-rojo.jpg?format=auto&quality=40&f=452x452",
+          "description": "Tabla de baloncesto resistente y de alta calidad. Ideal para montar en aros de baloncesto en interiores o exteriores.",
+          "quantity": 20,
+          "company": "Lifetime",
+          "price": 99.95
+        },
+        {
+          "id": 20,
+          "category": "Basketball",
+          "name": "Pantalones Cortos de Baloncesto",
+          "image": "https://media.vogue.es/photos/5cc737b28f6f67cf385bd069/master/w_1600%2Cc_limit/voguees_moda_tendencias_396953543.jpeg",
+          "description": "Pantalones cortos de baloncesto ligeros y transpirables. Diseñados para un rendimiento óptimo durante el juego.",
+          "quantity": 40,
+          "company": "Adidas",
+          "price": 24.99
+        },
+        {
+          "id": 21,
+          "category": "Basketball",
+          "name": "Gorra de Baloncesto",
+          "image": "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/80736790-fb22-4cf8-a99b-b63211ee1c6c/gorra-de-la-nba-ajustable-brooklyn-nets-city-edition-99m1MM.png",
+          "description": "Gorra de baloncesto de ajuste cómodo. Con diseño clásico y logotipo bordado.",
+          "quantity": 60,
+          "company": "Nike",
+          "price": 19.99
+        },
+        {
+          "id": 22,
+          "category": "Golf",
+          "name": "Set de Palos de Golf",
+          "image": "https://golftime.es/14253-large_default/set-completo-wilson-prostaff-sgi-grafito.jpg",
+          "description": "Set completo de palos de golf diseñado para jugadores de todos los niveles. Incluye bolsa de transporte.",
+          "quantity": 10,
+          "company": "Callaway",
+          "price": 599.99
+        },
+        {
+          "id": 23,
+          "category": "Golf",
+          "name": "Bolas de Golf",
+          "image": "https://mundogolf.golf/wp-content/uploads/2020/01/la-importancia-de-las-bolas-de-golf-en-el-juego.jpg",
+          "description": "Bolas de golf de alto rendimiento. Diseñadas para una distancia y precisión óptimas en el campo de golf.",
+          "quantity": 100,
+          "company": "Titleist",
+          "price": 39.99
+        },
+        {
+          "id": 24,
+          "category": "Golf",
+          "name": "Guante de Golf",
+          "image": "https://http2.mlstatic.com/D_NQ_NP_969308-MLA44063269732_112020-O.webp",
+          "description": "Guante de golf de cuero suave y resistente. Proporciona un agarre seguro y comodidad durante el juego.",
+          "quantity": 50,
+          "company": "FootJoy",
+          "price": 19.99
+        },
+        {
+          "id": 25,
+          "category": "Golf",
+          "name": "Carrito de Golf",
+          "image": "https://www.shutterstock.com/image-vector/vector-golf-car-trendy-flat-600nw-2180957043.jpg",
+          "description": "Carrito de golf plegable y resistente. Perfecto para transportar bolsas de golf y accesorios por el campo.",
+          "quantity": 30,
+          "company": "Clicgear",
+          "price": 199.95
+        },
+        {
+          "id": 26,
+          "category": "Golf",
+          "name": "Ropa de Golf para Hombre",
+          "image": "https://static.nike.com/a/images/f_auto/dpr_3.0,cs_srgb/w_403,c_limit/46e90b06-650b-4ce0-98f4-dd88e6544dd8/7%C2%A0golf-outfits-f%C3%BCr-herren.jpg",
+          "description": "Ropa de golf elegante y funcional para hombres. Diseñada para comodidad y estilo en el campo de golf.",
+          "quantity": 40,
+          "company": "Puma Golf",
+          "price": 79.99
+        },
+        {
+          "id": 27,
+          "category": "Golf",
+          "name": "Visera de Golf",
+          "image": "https://acushnet.scene7.com/is/image/titleist/2019-Tour-Visor-Staff-CB-FL-TH9VHPTS-OC?wid=1200&qlt=75&resMode=sharp2",
+          "description": "Visera de golf ligera y ajustable. Protege del sol y mantiene la frescura durante el juego.",
+          "quantity": 60,
+          "company": "Titleist",
+          "price": 24.99
+        },
+        {
+          "id": 28,
+          "category": "Golf",
+          "name": "Bolsa de Golf para Carro",
+          "image": "https://i.ebayimg.com/thumbs/images/g/QoMAAOSwDKhkYwTy/s-l640.jpg",
+          "description": "Bolsa de golf resistente y espaciosa diseñada para carros de golf. Con múltiples bolsillos y compartimentos.",
+          "quantity": 25,
+          "company": "TaylorMade",
+          "price": 179.99
+        },
+        {
+          "id": 29,
+          "category": "Swimming",
+          "name": "Traje de Baño para Mujer",
+          "image": "https://sparta.cl/media/catalog/product/t/r/traje-de-ba-o-natacion-mujer-speedo-colourblock-splice-muscleback-azul-frontal.jpg",
+          "description": "Traje de baño de una pieza diseñado para la práctica de natación. Ofrece comodidad y ajuste perfecto.",
+          "quantity": 25,
+          "company": "Speedo",
+          "price": 49.99
+        },
+        {
+          "id": 30,
+          "category": "Swimming",
+          "name": "Gafas de Natación",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMzVJx3klClkmJlrFz8KcYc-dcubGuqr5JCUGhcUA42w&s",
+          "description": "Gafas de natación resistentes a la niebla y con protección UV. Proporcionan una visión clara bajo el agua.",
+          "quantity": 50,
+          "company": "TYR",
+          "price": 19.99
+        },
+        {
+          "id": 31,
+          "category": "Swimming",
+          "name": "Gorro de Natación",
+          "image": "https://www.freundferreteria.com/Productos/GetMultimedia?idProducto=f63e3a97-e880-4c2e-8584-f7019891eee3&idMultimediaProducto=a09b42e2-d008-4f01-b8df-4c4ce23f4e48&width=500&height=500&qa=90&esImagen=True&ext=.jpg",
+          "description": "Gorro de natación cómodo y elástico. Diseñado para proteger el cabello y mejorar la hidrodinámica en el agua.",
+          "quantity": 80,
+          "company": "Arena",
+          "price": 7.99
+        },
+        {
+          "id": 32,
+          "category": "Swimming",
+          "name": "Aletas de Natación",
+          "image": "https://cdnpremium.s3.amazonaws.com/i/13384826789560G",
+          "description": "Aletas de natación ajustables para entrenamiento y competición. Mejoran la fuerza y la técnica de nado.",
+          "quantity": 30,
+          "company": "Finis",
+          "price": 29.95
+        },
+        {
+          "id": 33,
+          "category": "Swimming",
+          "name": "Toalla de Natación",
+          "image": "https://m.media-amazon.com/images/I/710RDBep1vL.jpg",
+          "description": "Toalla de microfibra absorbente y de secado rápido. Perfecta para llevar a la piscina o la playa.",
+          "quantity": 60,
+          "company": "Speedo",
+          "price": 24.99
+        },
+        {
+          "id": 34,
+          "category": "Swimming",
+          "name": "Pull Buoy de Natación",
+          "image": "https://infinitri.es/wp-content/uploads/2022/05/finis-pullboy-jr-e1652710527981.jpg",
+          "description": "Pull buoy flotante diseñado para mejorar la posición del cuerpo y la técnica de nado. Ideal para entrenamientos.",
+          "quantity": 40,
+          "company": "Arena",
+          "price": 12.99
+        },
+        {
+          "id": 35,
+          "category": "Swimming",
+          "name": "Bolsa de Equipo de Natación",
+          "image": "https://i.ebayimg.com/thumbs/images/g/h24AAOSwF~9lChq6/s-l225.jpg",
+          "description": "Bolsa resistente y espaciosa para transportar equipo de natación. Con compartimentos especiales para guardar accesorios.",
+          "quantity": 20,
+          "company": "TYR",
+          "price": 39.99
+        },
+        {
+          "id": 36,
+          "category": "Cycling",
+          "name": "Bicicleta de Montaña",
+          "image": "https://images.ecestaticos.com/tCoh5u0nHHvcKLPMGTDc8uycrnM=/0x0:638x359/1440x810/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F64f%2F158%2F108%2F64f1581087ce1bc054aede93edb22276.jpg",
+          "description": "Bicicleta robusta diseñada para terrenos difíciles y senderos de montaña. Ideal para ciclistas aventureros.",
+          "quantity": 15,
+          "company": "Trek",
+          "price": 799.99
+        },
+        {
+          "id": 37,
+          "category": "Cycling",
+          "name": "Casco de Ciclismo",
+          "image": "https://siman.vtexassets.com/arquivos/ids/1741533/103429854_1.jpg?v=637680378444130000",
+          "description": "Casco de ciclismo ligero y ventilado. Ofrece protección contra impactos y comodidad durante los paseos en bicicleta.",
+          "quantity": 50,
+          "company": "Giro",
+          "price": 59.99
+        },
+        {
+          "id": 38,
+          "category": "Cycling",
+          "name": "Maillot de Ciclismo",
+          "image": "https://www.mooquer.com/wp-content/uploads/mailot-de-ciclismo-rosa-morado-lila-mooquer-maillot-corto-verano-paradox-supercorsa-delantera-530x530.jpg",
+          "description": "Maillot de ciclismo transpirable y de secado rápido. Con diseño aerodinámico para mejorar el rendimiento en la bicicleta.",
+          "quantity": 40,
+          "company": "Castelli",
+          "price": 79.95
+        },
+        {
+          "id": 39,
+          "category": "Cycling",
+          "name": "Guantes de Ciclismo",
+          "image": "https://m.media-amazon.com/images/I/71MvZEHjzSS._AC_UF894,1000_QL80_.jpg",
+          "description": "Guantes acolchados y transpirables para ciclismo. Ofrecen protección y comodidad durante los viajes largos en bicicleta.",
+          "quantity": 60,
+          "company": "Pearl Izumi",
+          "price": 34.99
+        },
+        {
+          "id": 40,
+          "category": "Cycling",
+          "name": "Gafas de Ciclismo",
+          "image": "https://visioramasport.es/wp-content/uploads/2020/11/mejores-gafas-ciclismo.jpg",
+          "description": "Gafas de sol diseñadas específicamente para ciclismo. Protegen contra el viento, el sol y los objetos en la carretera.",
+          "quantity": 30,
+          "company": "Oakley",
+          "price": 129.99
+        },
+        {
+          "id": 41,
+          "category": "Cycling",
+          "name": "Botella de Agua para Bicicleta",
+          "image": "https://ae01.alicdn.com/kf/HTB1lUilNVXXXXcoXXXXq6xXFXXXq/Botella-de-agua-para-ciclismo-750ml-para-bicicleta-de-monta-a.jpg",
+          "description": "Botella de agua resistente y de fácil agarre para bicicleta. Perfecta para mantenerse hidratado durante los paseos largos.",
+          "quantity": 100,
+          "company": "CamelBak",
+          "price": 9.99
+        },
+        {
+          "id": 42,
+          "category": "Cycling",
+          "name": "Bombín de Bicicleta",
+          "image": "https://contents.mediadecathlon.com/p1308532/k$49089d86c986458370bae9b5d1a9598b/bombin-manual-100-ng.jpg?format=auto&quality=40&f=452x452",
+          "description": "Bombín portátil y ligero para inflar neumáticos de bicicleta. Compatible con válvulas Presta y Schrader.",
+          "quantity": 80,
+          "company": "Topeak",
+          "price": 29.99
+        },
+        {
+          "id": 43,
+          "category": "Athletics",
+          "name": "Zapatillas de Running",
+          "image": "https://hips.hearstapps.com/hmg-prod/images/zapatillas-asics-gel-kayano-30-64786a396064d.jpg?crop=1xw:1xh;center,top&resize=980:*",
+          "description": "Zapatillas de running diseñadas para ofrecer amortiguación y soporte durante la carrera. Ideales para corredores de larga distancia.",
+          "quantity": 35,
+          "company": "Nike",
+          "price": 119.99
+        },
+        {
+          "id": 44,
+          "category": "Athletics",
+          "name": "Pantalones de Running",
+          "image": "https://evernya.es/cdn/shop/products/pantalones-cortos-trail-running-hombre-915527.jpg?v=1698916959&width=1080",
+          "description": "Pantalones de running ligeros y transpirables. Con bolsillos con cremallera para guardar objetos pequeños durante la carrera.",
+          "quantity": 40,
+          "company": "Under Armour",
+          "price": 49.99
+        },
+        {
+          "id": 45,
+          "category": "Athletics",
+          "name": "Reloj Deportivo",
+          "image": "https://i.blogs.es/5baf81/fen/450_1000.jpg",
+          "description": "Reloj deportivo resistente al agua con funciones de seguimiento de actividad y GPS integrado. Perfecto para corredores y atletas.",
+          "quantity": 30,
+          "company": "Garmin",
+          "price": 199.99
+        },
+        {
+          "id": 46,
+          "category": "Athletics",
+          "name": "Mochila de Hidratación",
+          "image": "https://i5.walmartimages.com.mx/mg/gm/3pp/asr/78836a33-7fc0-48dd-b94e-f1cdeaec8647.1de1fc6ce3c33e84979446f3d61ff57c.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF",
+          "description": "Mochila ligera con sistema de hidratación integrado. Ideal para correr largas distancias sin necesidad de llevar botellas de agua.",
+          "quantity": 20,
+          "company": "Osprey",
+          "price": 89.95
+        },
+        {
+          "id": 47,
+          "category": "Athletics",
+          "name": "Camiseta de Running",
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgZPaPT3A7-VjxhMWrfvB19iZQpHucgBWyOWlbu1xtBg&s",
+          "description": "Camiseta de running transpirable y de secado rápido. Con tecnología que absorbe la humedad para mantenerte fresco y seco durante la carrera.",
+          "quantity": 45,
+          "company": "Adidas",
+          "price": 29.99
+        },
+        {
+          "id": 48,
+          "category": "Athletics",
+          "name": "Cinturón de Hidratación",
+          "image": "https://static.nike.com/a/images/f_auto/dpr_3.0,cs_srgb/w_403,c_limit/116ff29d-e7a7-4e25-ad18-0e3b6ef164df/mejores-chalecos-y-cinturones-de-hidrataci%C3%B3n-para-running-de-nike.jpg",
+          "description": "Cinturón ligero con botellas de agua para corredores. Proporciona hidratación conveniente durante los entrenamientos y carreras.",
+          "quantity": 25,
+          "company": "Nathan",
+          "price": 34.99
+        },
+        {
+          "id": 49,
+          "category": "Athletics",
+          "name": "Calcetines de Running",
+          "image": "https://m.media-amazon.com/images/I/81gCmlxbxbL._AC_UY580_.jpg",
+          "description": "Calcetines acolchados y transpirables para correr. Reducen el riesgo de ampollas y proporcionan confort durante la actividad.",
+          "quantity": 50,
+          "company": "Feetures",
+          "price": 12.99
+        },
+        {
+          "id": 50,
+          "category": "Climbing",
+          "name": "Arnés de Escalada",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Kong_-_roger.jpg",
+          "description": "Arnés resistente y ajustable para la práctica de la escalada en roca. Proporciona seguridad y confort durante la ascensión.",
+          "quantity": 20,
+          "company": "Petzl",
+          "price": 79.95
+        },
+        {
+          "id": 51,
+          "category": "Climbing",
+          "name": "Cuerda de Escalada",
+          "image": "https://m.media-amazon.com/images/I/61OD18mURTL._AC_UF894,1000_QL80_.jpg",
+          "description": "Cuerda dinámica de escalada diseñada para resistir impactos y tensiones. Ideal para ascensos en roca y montaña.",
+          "quantity": 40,
+          "company": "Sterling",
+          "price": 149.99
+        },
+        {
+          "id": 52,
+          "category": "Climbing",
+          "name": "Mosquetones de Escalada",
+          "image": "https://i1.wp.com/asacformacion.com/wp-content/uploads/2014/05/Mosqueton-de-escalada.asac_.png",
+          "description": "Mosquetones ligeros y duraderos para escalada. Diseñados para un enganche seguro y fácil liberación.",
+          "quantity": 80,
+          "company": "Black Diamond",
+          "price": 12.99
+        },
+        {
+          "id": 53,
+          "category": "Climbing",
+          "name": "Pies de Gato",
+          "image": "https://tatoo.ws/files/public/photos/consejos/2018/Como-escoger-tus-pies-de-gato/tarantula.jpg",
+          "description": "Zapatillas de escalada ajustadas y precisas. Proporcionan agarre y sensibilidad en las paredes de roca.",
+          "quantity": 30,
+          "company": "La Sportiva",
+          "price": 129.95
+        },
+        {
+          "id": 54,
+          "category": "Climbing",
+          "name": "Magnesio para Escalada",
+          "image": "https://www.mundodeportivo.com/elrecomendador/comparativas/wp-content/uploads/2023/04/B08CVQSSS6.jpg",
+          "description": "Magnesio en polvo para mejorar el agarre durante la escalada. Reduce la sudoración y proporciona una fricción óptima.",
+          "quantity": 60,
+          "company": "Metolius",
+          "price": 9.99
+        },
+        {
+          "id": 55,
+          "category": "Climbing",
+          "name": "Casco de Escalada",
+          "image": "https://dawfo2ydqeykk.cloudfront.net/catalog/product/cache/a94c62ccd2a56b9e4465c29308d3f830/g/r/grivel-mutant-22b-giv-hemut-yellow-1.jpg",
+          "description": "Casco ligero y robusto para escalada en roca. Ofrece protección contra impactos y caídas de objetos.",
+          "quantity": 25,
+          "company": "Petzl",
+          "price": 59.99
+        },
+        {
+          "id": 56,
+          "category": "Climbing",
+          "name": "Mochila de Escalada",
+          "image": "https://travesiapirenaica.b-cdn.net/wp-content/uploads/2019/05/Mammut-Neon-Gear_800x800.jpg",
+          "description": "Mochila resistente y espaciosa para transportar equipo de escalada. Con sistema de suspensión ajustable y múltiples puntos de fijación.",
+          "quantity": 35,
+          "company": "Osprey",
+          "price": 149.95
+        }
+      ]
+  }
+  
