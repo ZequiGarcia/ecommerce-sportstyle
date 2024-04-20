@@ -1,5 +1,7 @@
 import logo from '../../images/logoss.png'; // Importa la imagen
 import { Link } from 'react-router-dom'; // Importa Link si estás utilizando React Router
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome, faStore, faTags, faGift, faList } from '@fortawesome/free-solid-svg-icons';
 
 export const Header = () => {
     return (
@@ -11,11 +13,11 @@ export const Header = () => {
 
                 <div className="flex-none">
                 <ul className="flex space-x-24 text-neutral-content justify-center">
-                    <li><Link to="/" className="hover:text-gray-300 text-lg font-bold">Inicio</Link></li>
-                    <li><Link to="/tienda" className="hover:text-gray-300 text-lg font-bold">Tienda</Link></li>
-                    <li><Link to="/marca" className="hover:text-gray-300 text-lg font-bold">Marca</Link></li>
-                    <li><Link to="/oferta" className="hover:text-gray-300 text-lg font-bold">Oferta</Link></li>
-                    <li><Link to="/categoria" className="hover:text-gray-300 text-lg font-bold">Categoría</Link></li>
+                <li><Link to="/"><FontAwesomeIcon icon={faHome} className="mr-2" />Inicio</Link></li>
+                <li><Link to="/tienda"><FontAwesomeIcon icon={faStore} className="mr-2" />Tienda</Link></li>
+                <li><Link to="/marca"><FontAwesomeIcon icon={faTags} className="mr-2" />Marca</Link></li>
+                <li><Link to="/oferta"><FontAwesomeIcon icon={faGift} className="mr-2" />Oferta</Link></li>
+                <li><Link to="/categoria"><FontAwesomeIcon icon={faList} className="mr-2" />Categoría</Link></li>
                 </ul>
 
                 </div>
