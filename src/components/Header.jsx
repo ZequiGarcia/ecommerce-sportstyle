@@ -19,7 +19,9 @@ function Header() {
             <li><a href="#" className="text-white text-decoration-none fs-3 fuente">Marcas</a></li>
             <li><a href="#" className="text-white text-decoration-none fs-3 fuente">Ofertas</a></li> 
             <li><a href="#" className="text-white text-decoration-none fs-3 fuente">Categoria</a></li> 
-           
+            <li><a href="/login" className="text-white text-decoration-none fs-3 fuente">Iniciar Sesión</a></li>
+            <li><a href="/register" className="text-white text-decoration-none fs-3 fuente">Registrarse</a></li>
+
           </ul>
         </nav>
         <div className='ms-5'> {/* Contenedor para el ícono del carrito de compras y la cantidad de productos */}
