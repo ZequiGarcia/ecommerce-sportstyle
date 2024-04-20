@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { ProductRouter } from './router/ProductRouter';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 function App() {
   const [isAuth, setAuth] = useState(false);
 
@@ -12,7 +16,9 @@ function App() {
   }, []);
 
   return (
+
     <BrowserRouter>
+    <ToastContainer />
       <ProductRouter isAuth={isAuth} setAuth={setAuth} />
     </BrowserRouter>
   );

@@ -1,18 +1,17 @@
 import React from 'react';
-import logo from '../assets/logoss.png'; // Importamos la imagen del logo desde la carpeta de activos
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'; // Importamos el ícono del carrito de compras de Font Awesome
+import logo from '../assets/logoss.png'; 
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'; 
 
 function Header() {
   return (
-    <header className="bg-dark text-white py-3"> {/* Encabezado con fondo oscuro y texto blanco */}
-      <div className="container d-flex justify-content-between align-items-center"> {/* Contenedor con flexbox para alinear elementos */}
-        <div className="d-flex align-items-center"> {/* Contenedor para el logo y el texto */}
-          <img src={logo} alt="Logo" className="h-20 me-3" /> {/* Mostramos el logo */}
-          <span className="fs-1 ">SportStyle</span> {/* Mostramos el nombre de la tienda */}
+    <header className="bg-dark text-white py-3"> {}
+      <div className="container d-flex justify-content-between align-items-center"> {}
+        <div className="d-flex align-items-center"> {}
+          <img src={logo} alt="Logo" className="h-20 me-3" /> {}
+          <span className="fs-1 ">SportStyle</span> {}
         </div>
-        <nav className="ms-auto"> {/* Ajuste para mover el navbar a la derecha */}
-          <ul className="d-flex list-unstyled gap-5"> {/* Lista sin viñetas para los elementos de navegación */}
+        <nav className="ms-auto"> {}
+          <ul className="d-flex list-unstyled gap-5"> {}
             
             <li><a href="#" className="text-white text-decoration-none fs-3 fuente ">Inicio</a></li> 
             <li><a href="#" className="text-white text-decoration-none fs-3 fuente">Tienda</a></li>

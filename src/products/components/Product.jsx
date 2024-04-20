@@ -1,5 +1,20 @@
-
 import React from "react";
+
+import { toast } from 'react-toastify';
+
+const addToCart = (product) => {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let found = cart.find(item => item.id === product.id);
+    if (found) {
+        found.quantity += 1;
+        toast.success(`Producto ${product.name} agregado al carrito.`, { position: "bottom-right" });
+    } else {
+        cart.push({...product, quantity: 1});
+        toast.success(`${product.name} agregado al carrito.`, { position: "bottom-right" });
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
+};
+
 
 export const Product = ({ productos }) => {
     return (
@@ -17,7 +32,8 @@ export const Product = ({ productos }) => {
                                 <h2 className="card-title">{product.name}</h2>
                                 <p>{product.description}</p>
                                 <div className="card-actions justify-end">
-                                    <button className="btn btn-primary">Buy Now</button>
+                                    <button className="btn btn-primary" onClick={() => addToCart(product)}>Buy Now</button>
+                                    <button className="btn btn-secondary ml-2" onClick={() => addToCart(product)}>Agregar al Carrito</button>
                                 </div>
                             </div>
                         </div>
