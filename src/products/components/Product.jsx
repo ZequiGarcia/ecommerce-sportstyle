@@ -37,8 +37,7 @@ export const Product = ({ productos }) => {
                                 <h2 className="card-title">{product.name}</h2>
                                 <p>{product.description}</p>
                                 <div className="card-actions justify-end">
-                                    <button className="btn btn-primary" onClick={() => addToCart(product)}>Buy Now</button>
-                                    <button className="btn btn-secondary ml-2" onClick={() => addToCart(product)}>Agregar al Carrito</button>
+                                    <button className="btn btn-secondary ml-2 btn-outline" onClick={() => addToCart(product)}>Agregar al Carrito <i className="fa-solid fa-cart-plus"></i></button>
                                 </div>
                             </div>
                         </div>

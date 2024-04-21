@@ -13,10 +13,6 @@ export const Filter =  ({ onFilter, onReset })  => {
     const handleFilterClick = (categoria) => {
         onFilter(categoria);
     };
-
-    const handleResetClick = () => {
-        onReset();
-    };
     
     return (
         <div className="container mx-auto">
