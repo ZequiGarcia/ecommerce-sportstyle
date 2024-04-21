@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUserFriends } from '@fortawesome/free-solid-svg-icons';
 import {
   faHome,
   faStore,
   faTags,
   faGift,
-  faList,
   faSignInAlt,
   faUserPlus,
   faSignOutAlt,
   faShoppingCart
 } from '@fortawesome/free-solid-svg-icons';
 import logo from '../../images/logoss.png';
+
+
 
 export const Header = ({ isAuth, setAuth }) => {
   const [cartCount, setCartCount] = useState(0);
@@ -56,7 +58,7 @@ export const Header = ({ isAuth, setAuth }) => {
             <li><Link to="/tienda"><FontAwesomeIcon icon={faStore} className="mr-2" />Tienda</Link></li>
             <li><Link to="/marca"><FontAwesomeIcon icon={faTags} className="mr-2" />Marca</Link></li>
             <li><Link to="/oferta"><FontAwesomeIcon icon={faGift} className="mr-2" />Oferta</Link></li>
-            <li><Link to="/categoria"><FontAwesomeIcon icon={faList} className="mr-2" />Categoría</Link></li>
+            <li><Link to="/nosotros"><FontAwesomeIcon icon={faUserFriends} className="mr-2" />Nosotros</Link></li>
             {isAuth ? (
               <li>
                 <button onClick={handleLogout} className="text-white text-decoration-none fs-3 fuente">
