@@ -77,7 +77,7 @@ export const Header = ({ isAuth, setAuth }) => {
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle bg-white">
             <div className="indicator">
               <FontAwesomeIcon icon={faShoppingCart} className="h-5 w-5" />
-              <span className="badge badge-sm indicator-item">8</span>
+              <span className="badge badge-sm indicator-item">{cartCount}</span>
             </div>
           </div>
           <div tabIndex={0} className="mt-3 z-[1] card card-compact dropdown-content w-52 bg-base-100 shadow">
