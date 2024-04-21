@@ -5,14 +5,19 @@ import { toast } from 'react-toastify';
 const addToCart = (product) => {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     let found = cart.find(item => item.id === product.id);
+    
     if (found) {
         found.quantity += 1;
-        toast.success(`Producto ${product.name} agregado al carrito.`, { position: "bottom-right" });
+        toast.success(`Cantidad actualizada de ${product.name} en el carrito.`, { position: "bottom-right" });
     } else {
         cart.push({...product, quantity: 1});
         toast.success(`${product.name} agregado al carrito.`, { position: "bottom-right" });
     }
+    
     localStorage.setItem('cart', JSON.stringify(cart));
+
+    // Disparar un evento personalizado para indicar que el carrito ha sido actualizado
+    window.dispatchEvent(new CustomEvent('cartUpdated'));
 };
 
 

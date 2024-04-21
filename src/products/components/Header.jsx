@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -12,15 +12,37 @@ import {
   faSignOutAlt,
   faShoppingCart
 } from '@fortawesome/free-solid-svg-icons';
-import logo from '../../images/logoss.png'; // Asegúrate de que la ruta a la imagen sea la correcta
+import logo from '../../images/logoss.png';
 
 export const Header = ({ isAuth, setAuth }) => {
-  // Función para manejar el cierre de sesión
-  const handleLogout = () => {
-    localStorage.removeItem('user'); // Elimina el usuario de localStorage
-    setAuth(false); // Actualiza el estado de autenticación
-  };
+  const [cartCount, setCartCount] = useState(0);
+  const [subtotal, setSubtotal] = useState(0);
 
+  useEffect(() => {
+    const updateCartInfo = () => {
+      const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+      const itemCount = cartItems.reduce((total, item) => total + item.quantity, 0);
+      const itemSubtotal = cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
+  
+      setCartCount(itemCount);
+      setSubtotal(itemSubtotal);
+    };
+  
+    updateCartInfo();
+  
+    // Agregar listener para el evento 'cartUpdated'
+    window.addEventListener('cartUpdated', updateCartInfo);
+  
+    // Limpiar el listener cuando el componente se desmonta
+    return () => {
+      window.removeEventListener('cartUpdated', updateCartInfo);
+    };
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem('user');
+    setAuth(false);
+  };
   return (
     <div className="navbar bg-base-100 bg-neutral">
       <div className="container mx-auto flex justify-between items-center">
@@ -60,8 +82,8 @@ export const Header = ({ isAuth, setAuth }) => {
           </div>
           <div tabIndex={0} className="mt-3 z-[1] card card-compact dropdown-content w-52 bg-base-100 shadow">
             <div className="card-body">
-              <span className="font-bold text-lg">8 Items</span>
-              <span className="text-info">Subtotal: $999</span>
+            <span className="font-bold text-lg">{cartCount} Item(s)</span>
+              <span className="text-info">Subtotal: ${subtotal.toFixed(2)}</span>
               <div className="card-actions">
               <Link to="/carrito"><button className="btn btn-primary btn-block">Ver carrito</button></Link>
               </div>
