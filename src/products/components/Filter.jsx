@@ -20,13 +20,21 @@ export const Filter =  ({ onFilter, onReset })  => {
     
     return (
         <div className="container mx-auto">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            <button className="btn btn-lg btn-outline" onClick={handleResetClick}>Todas</button>
-                {Array.from(categoriasUnicas).map((categoria, index) => (
-                    <button key={index} className="btn btn-lg btn-outline" onClick={() => handleFilterClick(categoria)}>
-                        {categoria}
-                    </button>
-                ))}
+            <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-8 gap-4 " style={{marginTop: '2%', marginBottom: '2%'}}>
+               
+            {Array.from(categoriasUnicas).map((categoria, index) => (
+    <label key={index} className="inline-flex items-center space-x-1">
+        <input 
+            type="radio" 
+            name="radio-4" 
+            className="radio radio-accent" 
+            id={`categoria-${index}`}
+            onClick={() => handleFilterClick(categoria)} 
+        />
+        <span>{categoria}</span>
+    </label>
+))}
+
             </div>
         </div>
     );
