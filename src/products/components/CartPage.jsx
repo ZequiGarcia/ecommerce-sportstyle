@@ -3,6 +3,7 @@ import React from 'react';
 import { useCartPage } from '../../hooks';
 import { Payment } from './Payment';
 import { Header } from './Header';
+import Footer from './Footer';
 
 export const CartPage = () => {
     const {cart,removeFromCart, total} = useCartPage();
@@ -39,6 +40,7 @@ export const CartPage = () => {
         <Payment />
       </div>
     </div>
+    <Footer/>
     </>
   );
 };

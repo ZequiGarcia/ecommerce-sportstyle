@@ -19,7 +19,6 @@ export const useFilter = () => {
         const productosFiltrados = productos.filter(producto => producto.category === categoria);
         // Establecer los productos filtrados en el estado
         setFilteredProducts(productosFiltrados);
-        console.log("Productos filtrados:", productosFiltrados);
     };
 
     return {
