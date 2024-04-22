@@ -6,11 +6,12 @@ export const AboutUs = () => {
   return (
     <div>
       <Header />
-      <div className="max-w-3xl mx-auto my-6 p-4 bg-white  rounded-md">
+      <div className="bg-white  rounded-md">
         <img src="./src/images/Nosotros1.png" alt="Nosotros" className="w-full h-auto md:h-120 rounded-md" style={{ maxHeight: '500px'}} />
-        <div className="container mx-auto my-8">
+        
+        <div className="container mx-auto my-2 mt-2 max-w-6xl">
+        <br /><hr /><br />
           <div className="grid grid-cols-1 gap-8">
-           
             <div className="bg-white rounded-md overflow-hidden shadow-lg flex flex-col lg:flex-row items-center justify-center">
               <img src="./src/images/Nosotros2.png" alt="Imagen 1" className="w-full lg:w-1/2 h-auto lg:h-full" />
               <div className="p-4 w-full lg:w-1/2">
@@ -68,6 +69,7 @@ export const AboutUs = () => {
           </div>
         </div>
       </div>
+      <br /><hr /><br />
       <Footer />
     </div>
   );
