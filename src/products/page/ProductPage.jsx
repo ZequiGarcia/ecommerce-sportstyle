@@ -21,8 +21,11 @@ export const ProductPage = ({ isAuth, setAuth }) => {
   return (
     <>
       <Header isAuth={isAuth} setAuth={setAuth} />
-      <Filter onFilter={handleFilter} onReset={handleResetFilter} />
-      <Product productos={filtered ? filteredProducts : productos} />
+      <div className='container mx-auto px-4 sm:px-8 lg:px-12 my-4'>
+        <Filter onFilter={handleFilter} onReset={handleResetFilter} />
+        <br /><br />
+        <Product productos={filtered ? filteredProducts : productos} />
+      </div>
       <Footer />
     </>
   );
