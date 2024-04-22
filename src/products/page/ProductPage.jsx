@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useAllProduct, useFilter } from '../../hooks';
 import { Filter, Header, Product } from '../components';
+import Footer from '../components/Footer';
 
 export const ProductPage = ({ isAuth, setAuth }) => {
   const { productos } = useAllProduct(); 
@@ -22,6 +23,7 @@ export const ProductPage = ({ isAuth, setAuth }) => {
       <Header isAuth={isAuth} setAuth={setAuth} />
       <Filter onFilter={handleFilter} onReset={handleResetFilter} />
       <Product productos={filtered ? filteredProducts : productos} />
+      <Footer />
     </>
   );
 };

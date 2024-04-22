@@ -3,11 +3,12 @@ import { ProductPage } from "../products";
 import { LoginPage } from "../login";
 import { AboutUs, CartPage } from "../products/components";
 import { Register } from "../login/components";
+import Home from "../products/components/Home";
 
 export const ProductRouter = ({ isAuth, setAuth }) => {
   return (
     <Routes>
-      <Route path="/" element={<ProductPage isAuth={isAuth} setAuth={setAuth} />} />
+      <Route path="/" element={<Home isAuth={isAuth} setAuth={setAuth} />} />
       <Route path="/tienda" element={<ProductPage isAuth={isAuth} setAuth={setAuth} />} />
       <Route path="/login" element={<LoginPage isAuth={isAuth} setAuth={setAuth} />} />
       <Route path="/registro" element={<Register setAuth={setAuth} />} />
