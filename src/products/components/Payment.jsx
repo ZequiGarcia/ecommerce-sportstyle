@@ -3,7 +3,7 @@ export const Payment = () =>{
     return(
         <>
         {/* You can open the modal using document.getElementById('ID').showModal() method */}
-<button className="btn" onClick={()=>document.getElementById('my_modal_3').showModal()}>Pagar</button>
+<button className="btn btn-info" onClick={()=>document.getElementById('my_modal_3').showModal()}>Pagar</button>
 <dialog id="my_modal_3" className="modal">
   <div className="modal-box">
     <form method="dialog justify-center">

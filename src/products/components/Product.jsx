@@ -15,11 +15,11 @@ export const Product = ({ productos }) => {
                             </figure>
                             
                             <div className="card-body">
-                                <div className="badge badge-secondary">${product.price}</div>
+                                <div className="badge badge-info"><b></b>${product.price}</div>
                                 <h2 className="card-title">{product.name}</h2>
                                 <p>{product.description}</p>
                                 <div className="card-actions justify-end">
-                                    <button className="btn btn-secondary ml-2 btn-outline" onClick={() => addToCart(product)}>Agregar al Carrito <i className="fa-solid fa-cart-plus"></i></button>
+                                    <button className="btn btn-info ml-2 btn-outline" onClick={() => addToCart(product)}>Agregar al Carrito <i className="fa-solid fa-cart-plus"></i></button>
                                 </div>
                             </div>
                         </div>

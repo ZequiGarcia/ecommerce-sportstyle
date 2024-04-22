@@ -24,7 +24,7 @@ export const Filter = ({ onFilter, onReset }) => {
             <input
               type="radio"
               name="radio-4"
-              className="radio radio-accent"
+              className="radio radio-info"
               id={`categoria-${index}`}
               onClick={() => handleFilterClick(categoria)}
             />
