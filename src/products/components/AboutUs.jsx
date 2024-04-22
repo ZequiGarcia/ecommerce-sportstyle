@@ -1,7 +1,7 @@
 import React from 'react';
 import { Header } from './Header';
 
-const AboutUs = () => {
+export const AboutUs = () => {
   return (
     <div>
       <Header />
@@ -71,4 +71,3 @@ const AboutUs = () => {
   );
 };
 
-export default AboutUs;

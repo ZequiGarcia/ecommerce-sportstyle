@@ -56,8 +56,6 @@ export const Header = ({ isAuth, setAuth }) => {
           <ul className="flex space-x-24 text-neutral-content justify-center">
             <li><Link to="/"><FontAwesomeIcon icon={faHome} className="mr-2" />Inicio</Link></li>
             <li><Link to="/tienda"><FontAwesomeIcon icon={faStore} className="mr-2" />Tienda</Link></li>
-            <li><Link to="/marca"><FontAwesomeIcon icon={faTags} className="mr-2" />Marca</Link></li>
-            <li><Link to="/oferta"><FontAwesomeIcon icon={faGift} className="mr-2" />Oferta</Link></li>
             <li><Link to="/nosotros"><FontAwesomeIcon icon={faUserFriends} className="mr-2" />Nosotros</Link></li>
             {isAuth ? (
               <li>

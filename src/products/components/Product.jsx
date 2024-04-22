@@ -47,3 +47,4 @@ export const Product = ({ productos }) => {
         </div>
     );
 };
+    
