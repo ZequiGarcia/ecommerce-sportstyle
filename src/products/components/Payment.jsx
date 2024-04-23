@@ -1,13 +1,14 @@
 import React from 'react';
 import { usePayment } from '../../hooks';
+import { toast } from 'react-toastify';
 
 export const Payment = () => {
+  const { cardNumber, cardHolder, cvv, expiryDate, setCardHolder, setCardNumber, setCvv, setExpiryDate, handlePayment, handleExpiryDateChange } = usePayment();
 
-    const { cardNumber, cardHolder, cvv, expiryDate, setCardHolder,setCardNumber,setCvv, setExpiryDate, handlePayment } = usePayment();
   return (
     <>
       <button className="btn btn-info" onClick={() => document.getElementById('my_modal_3').showModal()}>Pagar</button>
-      <dialog id="my_modal_3" className="modal">
+      <dialog id="my_modal_3" className="modal" style={{zIndex: '1000'}}>
         <div className="modal-box flex flex-col items-center">
           <form method="dialog justify-center">
             <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
@@ -45,7 +46,7 @@ export const Payment = () => {
               placeholder="MM/YY"
               className="input input-bordered input-accent w-full max-w-xs text-center"
               value={expiryDate}
-              onChange={(e) => setExpiryDate(e.target.value)}
+              onChange={handleExpiryDateChange}
             />
           </div>
 
@@ -62,7 +63,12 @@ export const Payment = () => {
           </div>
 
           <div className="form-control mt-5 w-full max-w-xs">
-            <button className="btn btn-primary" onClick={handlePayment}>Pagar ahora</button>
+            <button className="btn btn-primary" onClick={() => {
+              handlePayment();
+              // Cerrar el modal aquí después de que se realice el pago
+              const modal = document.getElementById('my_modal_3');
+              modal.close();
+            }}>Pagar ahora</button>
           </div>
         </div>
       </dialog>

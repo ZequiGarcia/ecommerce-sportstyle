@@ -1,41 +1,49 @@
-import  { useState } from 'react';
-
+import { useState } from 'react';
+import { toast } from 'react-toastify';
+import Swal from 'sweetalert2';
 
 export const usePayment = () => {
-    const [cardNumber, setCardNumber] = useState('');
+  const [cardNumber, setCardNumber] = useState('');
   const [cardHolder, setCardHolder] = useState('');
   const [expiryDate, setExpiryDate] = useState('');
   const [cvv, setCvv] = useState('');
 
   const handlePayment = () => {
-    // Expresión regular para validar el formato MM/YY
     const expiryRegex = /^(0[1-9]|1[0-2])\/?([0-9]{4}|[0-9]{2})$/;
-    // Expresión regular para validar el CVV de 3 dígitos
     const cvvRegex = /^[0-9]{3}$/;
 
-    // Validar que los campos no estén vacíos
     if (!cardNumber.trim() || !cardHolder.trim() || !expiryDate.trim() || !cvv.trim()) {
-      alert("Por favor complete todos los campos antes de realizar el pago.");
+      toast.error('Por favor complete todos los campos antes de realizar el pago.', { position: "bottom-right" });
       return;
     }
 
-    // Validar el formato de la fecha de vencimiento
     if (!expiryRegex.test(expiryDate)) {
-      alert("Por favor ingrese la fecha de vencimiento en formato MM/YY.");
+      toast.error('Por favor ingrese la fecha de vencimiento en formato MM/YY.', { position: "bottom-right" });
       return;
     }
 
-    // Validar el formato del CVV
     if (!cvvRegex.test(cvv)) {
-      alert("Por favor ingrese un CVV válido de 3 dígitos.");
+      toast.error('Por favor ingrese un CVV válido de 3 dígitos.', { position: "bottom-right" });
       return;
     }
 
-    // Si todas las validaciones son exitosas, mostrar un mensaje de éxito en la consola
-    console.log("¡Pago realizado con éxito!");
+    // Si todas las validaciones son exitosas, mostrar un mensaje de éxito
+    toast.success('Pago realizado con éxito!.', { position: "bottom-right" });
+    // Cerrar el modal
+    const modal = document.getElementById('my_modal_3');
+    modal.close();
   };
 
-  return{
+  const handleExpiryDateChange = (e) => {
+    let value = e.target.value;
+    // Si la longitud de la cadena es 2 y el último carácter no es "/", agregue "/" al final
+    if (value.length === 2 && value.charAt(1) !== "/") {
+      value += "/";
+    }
+    setExpiryDate(value);
+  };
+
+  return {
     cardNumber,
     cardHolder,
     cvv,
@@ -45,5 +53,6 @@ export const usePayment = () => {
     setCvv,
     setExpiryDate,
     handlePayment,
-  }
-}
+    handleExpiryDateChange,
+  };
+};

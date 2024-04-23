@@ -3,6 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { ProductRouter } from './router/ProductRouter';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import './index.css'
 
 
 function App() {
