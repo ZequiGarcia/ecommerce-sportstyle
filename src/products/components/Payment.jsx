@@ -8,12 +8,12 @@ export const Payment = () => {
     <>
       <button className="btn btn-info" onClick={() => document.getElementById('my_modal_3').showModal()}>Pagar</button>
       <dialog id="my_modal_3" className="modal">
-        <div className="modal-box">
+        <div className="modal-box flex flex-col items-center">
           <form method="dialog justify-center">
             <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
           </form>
-          <h3 className="font-bold text-lg">Pago!</h3>
-          <div className="form-control">
+          <h3 className="font-bold text-lg mt-4">Pago!</h3>
+          <div className="form-control mt-2 w-full max-w-xs">
             <label htmlFor="card-number">Número de tarjeta</label>
             <input
               type="text"
@@ -25,7 +25,7 @@ export const Payment = () => {
             />
           </div>
 
-          <div className="form-control">
+          <div className="form-control mt-2 w-full max-w-xs">
             <label htmlFor="card-holder">Nombre del titular de la tarjeta</label>
             <input
               type="text"
@@ -37,7 +37,7 @@ export const Payment = () => {
             />
           </div>
 
-          <div className="form-control">
+          <div className="form-control mt-2 w-full max-w-xs">
             <label htmlFor="expiry-date">Fecha de vencimiento (MM/YY)</label>
             <input
               type="text"
@@ -49,7 +49,7 @@ export const Payment = () => {
             />
           </div>
 
-          <div className="form-control">
+          <div className="form-control mt-2 w-full max-w-xs">
             <label htmlFor="cvv">CVV (3 dígitos)</label>
             <input
               type="text"
@@ -61,7 +61,7 @@ export const Payment = () => {
             />
           </div>
 
-          <div className="form-control mt-5">
+          <div className="form-control mt-5 w-full max-w-xs">
             <button className="btn btn-primary" onClick={handlePayment}>Pagar ahora</button>
           </div>
         </div>
