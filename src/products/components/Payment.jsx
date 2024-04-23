@@ -1,13 +1,24 @@
 import React from 'react';
 import { usePayment } from '../../hooks';
-import { toast } from 'react-toastify';
 
 export const Payment = () => {
   const { cardNumber, cardHolder, cvv, expiryDate, setCardHolder, setCardNumber, setCvv, setExpiryDate, handlePayment, handleExpiryDateChange } = usePayment();
 
+  const user = JSON.parse(localStorage.getItem('user'));
+  const cart = JSON.parse(localStorage.getItem('cart'));
+
+  // Verificar si el usuario está autenticado y si hay productos en el carrito
+  const isAuthenticated = user !== null;
+  const hasProductsInCart = cart !== null && cart.length > 0;
+
+  // Mostrar el botón de pago solo si el usuario está autenticado y hay productos en el carrito
+  const showPaymentButton = isAuthenticated && hasProductsInCart;
+
   return (
     <>
-      <button className="btn btn-info" onClick={() => document.getElementById('my_modal_3').showModal()}>Pagar</button>
+      {showPaymentButton && (
+        <button className="btn btn-info" onClick={() => document.getElementById('my_modal_3').showModal()}>Pagar</button>
+      )}
       <dialog id="my_modal_3" className="modal" style={{zIndex: '1000'}}>
         <div className="modal-box flex flex-col items-center">
           <form method="dialog justify-center">

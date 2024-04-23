@@ -1,173 +1,92 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { 
-  faUserFriends, 
-  faHome, 
-  faStore, 
-  faSignInAlt, 
-  faUserPlus, 
-  faSignOutAlt, 
-  faShoppingCart, 
-  faBars 
-} from "@fortawesome/free-solid-svg-icons";
-import logo from "../../images/logoss.png";
+import React from 'react';
+import { usePayment } from '../../hooks';
 
-export const Header = ({ isAuth, setAuth }) => {
-  const [cartCount, setCartCount] = useState(0);
-  const [subtotal, setSubtotal] = useState(0);
-  const [menuOpen, setMenuOpen] = useState(false); // Estado del menú
+export const Payment = () => {
+  const { cardNumber, cardHolder, cvv, expiryDate, setCardHolder, setCardNumber, setCvv, setExpiryDate, handlePayment, handleExpiryDateChange } = usePayment();
 
-  useEffect(() => {
-    const updateCartInfo = () => {
-      const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
-      const itemCount = cartItems.reduce(
-        (total, item) => total + item.quantity,
-        0
-      );
-      const itemSubtotal = cartItems.reduce(
-        (total, item) => total + item.price * item.quantity,
-        0
-      );
+  const user = JSON.parse(localStorage.getItem('user'));
+  const cart = JSON.parse(localStorage.getItem('cart'));
 
-      setCartCount(itemCount);
-      setSubtotal(itemSubtotal);
-    };
+  // Verificar si el usuario está autenticado y si hay productos en el carrito
+  const isAuthenticated = user !== null;
+  const hasProductsInCart = cart !== null && cart.length > 0;
 
-    updateCartInfo();
+  // Mostrar el botón de pago solo si el usuario está autenticado y hay productos en el carrito
+  const showPaymentButton = isAuthenticated && hasProductsInCart;
 
-    // Agregar listener para el evento 'cartUpdated'
-    window.addEventListener("cartUpdated", updateCartInfo);
-
-    // Limpiar el listener cuando el componente se desmonta
-    return () => {
-      window.removeEventListener("cartUpdated", updateCartInfo);
-    };
-  }, []);
-
-  const handleLogout = () => {
-    localStorage.removeItem("user");
-    setAuth(false);
+  const handlePaymentAndClearCart = () => {
+    handlePayment();
+    localStorage.removeItem('cart');
+    setCart([]); // Actualizar el estado del carrito en el componente Payment
+    const modal = document.getElementById('my_modal_3');
+    modal.close();
   };
 
   return (
-    
-    <div className="bg-neutral">
-      <div className="container mx-auto flex justify-between items-center py-4 px-6 lg:px-12">
-        <div className="flex items-center">
-          <img src={logo} alt="Logo" className="h-16 lg:h-20" />
-          {/* Menú para dispositivos grandes */}
-          <ul className="hidden lg:flex ml-8 space-x-8 text-neutral-content">
-            <li>
-              <Link to="/" className="hover:text-primary">
-                <FontAwesomeIcon icon={faHome} className="mr-2" />
-                Inicio
-              </Link>
-            </li>
-            <li>
-              <Link to="/tienda" className="hover:text-primary">
-                <FontAwesomeIcon icon={faStore} className="mr-2" />
-                Tienda
-              </Link>
-            </li>
-            <li>
-              <Link to="/nosotros" className="hover:text-primary">
-                <FontAwesomeIcon icon={faUserFriends} className="mr-2" />
-                Nosotros
-              </Link>
-            </li>
-          </ul>
-        </div>
+    <>
+      {showPaymentButton && (
+        <button className="btn btn-info" onClick={() => document.getElementById('my_modal_3').showModal()}>Pagar</button>
+      )}
+      <dialog id="my_modal_3" className="modal" style={{ zIndex: '1000' }}>
+        <div className="modal-box flex flex-col items-center">
+          <form method="dialog justify-center">
+            <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+          </form>
+          <h3 className="font-bold text-lg mt-4">Pago!</h3>
+          <div className="form-control mt-2 w-full max-w-xs">
+            <label htmlFor="card-number">Número de tarjeta</label>
+            <input
+              type="text"
+              id="card-number"
+              placeholder="Ingrese el número de tarjeta"
+              className="input input-bordered input-accent w-full max-w-xs text-center"
+              value={cardNumber}
+              onChange={(e) => setCardNumber(e.target.value)}
+            />
+          </div>
 
-        <div className="flex items-center space-x-6">
-          {/* Carrito solo visible en dispositivos grandes */}
-          <div className="dropdown  dropdown-end">
-        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle bg-white">
-          <div className="indicator">
-            <FontAwesomeIcon icon={faShoppingCart} className="h-5 w-5" />
-            <span className="badge badge-sm indicator-item">{cartCount}</span>
+          <div className="form-control mt-2 w-full max-w-xs">
+            <label htmlFor="card-holder">Nombre del titular de la tarjeta</label>
+            <input
+              type="text"
+              id="card-holder"
+              placeholder="Ingrese el nombre del titular de la tarjeta"
+              className="input input-bordered input-accent w-full max-w-xs text-center"
+              value={cardHolder}
+              onChange={(e) => setCardHolder(e.target.value)}
+            />
           </div>
-        </div>
-        <div tabIndex={0} className="mt-3 z-[1] card card-compact dropdown-content w-52 bg-base-100 shadow">
-          <div className="card-body">
-          <span className="font-bold text-lg text-black">{cartCount} Item(s)</span>
-            <span className="text-info">Subtotal: ${subtotal.toFixed(2)}</span>
-            <div className="card-actions">
-            <Link to="/carrito"><button className="btn btn-primary btn-block">Ver carrito</button></Link>
-            </div>
-          </div>
-        </div>
-          {/* Botón de inicio de sesión y registro solo en dispositivos grandes */}
-          <div className="hidden lg:flex items-center space-x-4">
-            {/* Renderizado condicional de los botones */}
-            {isAuth ? (
-              <button onClick={handleLogout} className="text-neutral-content hover:text-primary">
-                <FontAwesomeIcon icon={faSignOutAlt} className="mr-2" />
-                <span className="hidden lg:inline">Cerrar Sesión</span>
-              </button>
-            ) : (
-              <>
-                <Link to="/login" className="text-neutral-content hover:text-primary">
-                  <FontAwesomeIcon icon={faSignInAlt} className="mr-2" />
-                  <span className="hidden lg:inline">Login</span>
-                </Link>
-                <Link to="/registro" className="text-neutral-content hover:text-primary">
-                  <FontAwesomeIcon icon={faUserPlus} className="mr-2" />
-                  <span className="hidden lg:inline">Registro</span>
-                </Link>
-              </>
-            )}
-          </div>
-          {/* Avatar siempre visible */}
-            <MEnuDesplegable/>
 
-          {/* Botón de menú para dispositivos pequeños */}
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="lg:hidden text-neutral-content"
-          >
-            <FontAwesomeIcon icon={faBars} className="h-6 lg:h-8" />
-          </button>
+          <div className="form-control mt-2 w-full max-w-xs">
+            <label htmlFor="expiry-date">Fecha de vencimiento (MM/YY)</label>
+            <input
+              type="text"
+              id="expiry-date"
+              placeholder="MM/YY"
+              className="input input-bordered input-accent w-full max-w-xs text-center"
+              value={expiryDate}
+              onChange={handleExpiryDateChange}
+            />
+          </div>
+
+          <div className="form-control mt-2 w-full max-w-xs">
+            <label htmlFor="cvv">CVV (3 dígitos)</label>
+            <input
+              type="text"
+              id="cvv"
+              placeholder="Ingrese CVV"
+              className="input input-bordered input-accent w-full max-w-xs text-center"
+              value={cvv}
+              onChange={(e) => setCvv(e.target.value)}
+            />
+          </div>
+          <div className="form-control mt-5 w-full max-w-xs">
+            <button className="btn btn-primary" onClick={handlePaymentAndClearCart}>
+              Pagar ahora
+            </button>
+          </div>
         </div>
-      </div>
-      {/* Menú desplegable en dispositivos pequeños */}
-      <ul
-        className={`lg:hidden bg-base-100 text-base-content space-y-2 py-2 px-4 ${
-          menuOpen ? "block" : "hidden"
-        }`}
-      >
-        <li>
-          <Link to="/" className="hover:text-primary">
-            <FontAwesomeIcon icon={faHome} className="mr-2" />
-            Inicio
-          </Link>
-        </li>
-        <li>
-          <Link to="/tienda" className="hover:text-primary">
-            <FontAwesomeIcon icon={faStore} className="mr-2" />
-            Tienda
-          </Link>
-        </li>
-        <li>
-          <Link to="/nosotros" className="hover:text-primary">
-            <FontAwesomeIcon icon={faUserFriends} className="mr-2" />
-            Nosotros
-          </Link>
-        </li>
-        {!isAuth && (
-          <>
-            <li>
-              <Link to="/login" className="hover:text-primary">
-                <FontAwesomeIcon icon={faSignInAlt} className="mr-2" />
-                Login
-              </Link>
-            </li>
-            <li><Link to="/registro" className="hover:text-primary"><FontAwesomeIcon icon={faUserPlus} className="mr-2" />Registro</Link>
-            </li>
-          </>
-        )}
-      </ul>
-    </div>
-    </div>
+      </dialog>
+    </>
   );
 };

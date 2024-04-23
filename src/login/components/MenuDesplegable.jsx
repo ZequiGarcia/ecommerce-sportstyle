@@ -3,15 +3,16 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSignInAlt, faSignOutAlt, faUserPlus } from '@fortawesome/free-solid-svg-icons';
 
-export const MenuDesplegable = () => {
+export const MenuDesplegable = ({ setAuth }) => {
   const [mostrarMenu, setMostrarMenu] = useState(false);
 
   const toggleMenu = () => {
     setMostrarMenu(!mostrarMenu);
   };
+  
   const handleLogout = () => {
-    localStorage.removeItem('correo');
-    setAuth(false);
+    localStorage.removeItem('user'); // Aquí utilizamos setAuth para manejar el cierre de sesión
+    setMostrarMenu(false);
   };
 
   return (
