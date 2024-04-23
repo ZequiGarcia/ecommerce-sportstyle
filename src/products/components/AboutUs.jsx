@@ -13,7 +13,7 @@ export const AboutUs = () => {
         <br /><hr /><br />
           <div className="grid grid-cols-1 gap-8">
             <div className="bg-white rounded-md overflow-hidden shadow-lg flex flex-col lg:flex-row items-center justify-center">
-              <img src="./src/images/Nosotros2.png" alt="Imagen 1" className="w-full lg:w-1/2 h-auto lg:h-full" />
+              <img src="src/images/Nosotros2.png" alt="funciona" className="w-full lg:w-1/2 h-auto lg:h-full" />
               <div className="p-4 w-full lg:w-1/2">
                 <h2 className="text-3xl lg:text-4xl font-semibold mb-5">Calidad, confianza y prestigio en tus actividades físicas.</h2>
                 <p className="text-base lg:text-lg text-gray-600">
