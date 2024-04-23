@@ -40,7 +40,6 @@ export const Header = ({ isAuth, setAuth }) => {
     <div className="navbar bg-base-100 bg-neutral text-primary-content">
       <div className="content-end">
       <Link to="/" className={location.pathname === '/' ? 'active' : ''}><img src={logo} alt="Logo" className="h-20" /></Link>
-          
       </div>
       <div className="navbar-start text-neutral-content">
         <div className="dropdown bg-neutral">
