@@ -11,9 +11,7 @@ import {
   faShoppingCart
 } from '@fortawesome/free-solid-svg-icons';
 import logo from '../../images/logoss.png';
-import MenuDesplegable from '../../login/components/MenuDesplegable';
-
-
+import { MenuDesplegable } from '../../login/components/MenuDesplegable';
 
 export const Header = ({ isAuth, setAuth }) => {
   const [cartCount, setCartCount] = useState(0);
@@ -43,10 +41,10 @@ export const Header = ({ isAuth, setAuth }) => {
 
   return (
     <div className="navbar bg-base-100 bg-neutral text-primary-content">
-      <div className="-content-end">
+      <div className="content-end">
           <img src={logo} alt="Logo" className="h-20" />
       </div>
-      <div className="navbar-end text-neutral-content">
+      <div className="navbar-start text-neutral-content">
         <div className="dropdown bg-neutral">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>

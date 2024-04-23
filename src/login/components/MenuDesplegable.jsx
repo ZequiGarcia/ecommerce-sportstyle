@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSignInAlt, faSignOutAlt, faUserPlus } from '@fortawesome/free-solid-svg-icons';
 
-const MenuDesplegable = () => {
+export const MenuDesplegable = () => {
   const [mostrarMenu, setMostrarMenu] = useState(false);
 
   const toggleMenu = () => {
@@ -61,5 +61,3 @@ const MenuDesplegable = () => {
     </div>
   );
 };
-
-export default MenuDesplegable;
