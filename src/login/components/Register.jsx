@@ -1,5 +1,7 @@
 import React from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import { useRegister } from '../../hooks';
+
 
 export function Register() {
     const {user, setUser,  password, setPassword, handleSubmit} = useRegister();
@@ -29,6 +31,19 @@ export function Register() {
         <button type="submit" className="w-full bg-green-600 hover:bg-green-800 text-white font-bold py-2 px-4 rounded-lg transition duration-300">
           Registrarse
         </button>
+        <br />
+        <div>
+          <label htmlFor="ya-tienes-cuenta" className='border-gray-700 text-white'>¿Ya tienes una cuenta? </label>
+            <Link to="/Login" className="link-button border-gray-700 text-white">
+            <span><strong className='border-gray-700 text-white'>Inicia sesión</strong></span>
+          </Link>
+        </div>
+        <br />
+        <div className='border-gray-700 text-white'>
+          <Link to="/" className="link-button border-gray-700 text-white">
+          <span><strong className='border-gray-700 text-white'>Retornar a Home</strong></span>
+          </Link>
+        </div>
       </form>
     </div>
   );

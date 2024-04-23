@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import { useLogin } from '../../hooks';
 
 export function Login({ setAuth }) {
@@ -29,6 +30,19 @@ export function Login({ setAuth }) {
         <button type="submit" className="w-full bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded-lg transition duration-300">
           Iniciar Sesión
         </button>
+        <br />
+        <div>
+          <label htmlFor="no-tienes-cuenta" className='border-gray-700 text-white'>No tienes cuenta? </label>
+          <Link to="/registro" className='border-gray-700 text-white'>
+            <span><strong className='border-gray-700 text-white'>Regístrate</strong></span>
+          </Link>
+        </div>
+        <br />
+        <div className='border-gray-700 text-white'>
+          <Link to="/" className="link-button border-gray-700 text-white">
+          <span><strong className='border-gray-700 text-white'>Retornar a Home</strong></span>
+          </Link>
+        </div>
       </form>
     </div>
   );
