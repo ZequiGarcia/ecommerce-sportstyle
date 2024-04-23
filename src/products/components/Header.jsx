@@ -66,7 +66,7 @@ export const Header = ({ isAuth, setAuth }) => {
         </ul>  
       </div>
       <div className="dropdown  dropdown-end">
-        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle bg-white">
+        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
           <div className="indicator">
             <FontAwesomeIcon icon={faShoppingCart} className="h-5 w-5" />
             <span className="badge badge-sm indicator-item">{cartCount}</span>
