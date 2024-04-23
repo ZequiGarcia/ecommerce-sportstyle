@@ -7,7 +7,7 @@ export const AboutUs = () => {
     <div>
       <Header />
       <div className="bg-white  rounded-md">
-        <img src="./src/images/Nosotros1.png" alt="Nosotros" className="w-full h-auto md:h-120 rounded-md" style={{ maxHeight: '500px'}} />
+        <img src="./src/images/Nosotros1.png" alt="Nosotros" className="w-full h-auto md:h-120 rounded-md" style={{ maxHeight: '800px'}} />
         
         <div className="container mx-auto my-2 mt-2 max-w-6xl">
         <br /><hr /><br />

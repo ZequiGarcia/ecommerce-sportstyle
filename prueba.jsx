@@ -1,4 +1,4 @@
-<div className="navbar bg-base-100">
+<div className="navbar bg-base-100 bg-neutral">
     <div className="flex-1">
         <img src={logo} alt="Logo" className="h-20" />
     </div>
@@ -25,25 +25,6 @@
               </>
             )}
       </ul>
-
-      <div className="dropdown  ml-20 mr-6">
-          <div tabIndex={0} role="button" className="btn btn-ghost btn-circle bg-white">
-            <div className="indicator">
-              <FontAwesomeIcon icon={faShoppingCart} className="h-5 w-5" />
-              <span className="badge badge-sm indicator-item">{cartCount}</span>
-            </div>
-          </div>
-          <div tabIndex={0} className="mt-3 z-[1] card card-compact dropdown-content w-52 bg-base-100 shadow">
-            <div className="card-body">
-            <span className="font-bold text-lg">{cartCount} Item(s)</span>
-              <span className="text-info">Subtotal: ${subtotal.toFixed(2)}</span>
-              <div className="card-actions">
-              <Link to="/carrito"><button className="btn btn-primary btn-block">Ver carrito</button></Link>
-              </div>
-            </div>
-          </div>
-        </div>
-
         
     </div>
   </div>
@@ -68,4 +49,24 @@
     </ul>
     
   </div>
+
+  <div className="dropdown  ml-20 mr-6">
+          <div tabIndex={0} role="button" className="btn btn-ghost btn-circle bg-white">
+            <div className="indicator">
+              <FontAwesomeIcon icon={faShoppingCart} className="h-5 w-5" />
+              <span className="badge badge-sm indicator-item">{cartCount}</span>
+            </div>
+          </div>
+          <div tabIndex={0} className="mt-3 z-[1] card card-compact dropdown-content w-52 bg-base-100 shadow">
+            <div className="card-body">
+            <span className="font-bold text-lg">{cartCount} Item(s)</span>
+              <span className="text-info">Subtotal: ${subtotal.toFixed(2)}</span>
+              <div className="card-actions">
+              <Link to="/carrito"><button className="btn btn-primary btn-block">Ver carrito</button></Link>
+              </div>
+            </div>
+          </div>
+        </div>
 </div>
+
+

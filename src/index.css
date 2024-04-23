@@ -8,15 +8,3 @@
     font-style: normal;
     
 }
-
-/*? style de las Product card*/
-
-.flexbox-container{
-    display: flex;
-    flex-direction: row;
-}
-
-body{
-    color: black;
-}
-/*? fin de style de product card*/

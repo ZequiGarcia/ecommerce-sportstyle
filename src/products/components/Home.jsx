@@ -84,7 +84,7 @@ const Home = () => {
       <Header />
       <main className="container mx-auto px-4 py-5">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <section className="bg-light-100">
+          <section className="bg-light-100 context-justify">
             <div className="max-w-2xl mx-auto text-left">
               <h2 className="text-3xl font-bold text-gray-800 mb-6">
                 ¡Bienvenido a SportStyle!

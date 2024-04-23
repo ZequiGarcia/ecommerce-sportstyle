@@ -15,10 +15,7 @@ export const Filter = ({ onFilter, onReset }) => {
 
   return (
     <div className="container mx-auto">
-      <div
-        className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-8 gap-4 "
-        style={{ marginTop: "2%", marginBottom: "2%" }}
-      >
+      <div className="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-8 gap-4 " style={{ marginTop: "2%", marginBottom: "2%" }}>
         {Array.from(categoriasUnicas).map((categoria, index) => (
           <label key={index} className="inline-flex items-center space-x-1">
             <input

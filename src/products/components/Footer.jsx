@@ -5,6 +5,7 @@ const Footer = () => {
     <footer className="bg-gray-900 text-white py-8">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+
           <div>
             <h3 className="text-lg font-semibold mb-4 text-center">Sobre Nosotros</h3>
             <p className="text-sm mx-4"> 
@@ -13,6 +14,7 @@ const Footer = () => {
               satisfagan las necesidades de nuestros clientes.comercializamos marcas internacionales tanto al detalle como al por mayor, contando con una fuerza de ventas capaz de proporcionar soluciones deportivas a nuestros clientes. 
             </p>
           </div>
+
           <div>
             <h3 className="text-lg font-semibold mb-4 text-center">Contáctanos</h3>
             <p className="text-sm mx-4"> 
@@ -25,6 +27,7 @@ const Footer = () => {
               Email: info@sportstyle.com
             </p>
           </div>
+
           <div>
             <h3 className="text-lg font-semibold mb-4 text-center">Valores</h3>
             <div className="flex space-x-4">
@@ -36,7 +39,9 @@ const Footer = () => {
               </ul>
             </div>
           </div>
+
         </div>
+        
         <hr className="border-gray-700 my-8" />
         <p className="text-center text-sm">
           © 2024 SportStyle. Todos los derechos reservados.
