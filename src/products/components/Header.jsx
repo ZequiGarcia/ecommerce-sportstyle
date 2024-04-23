@@ -109,6 +109,6 @@ export const Header = ({ isAuth, setAuth }) => {
           </div>
         </div>
       </div>
-    </div>
+  </div>
   );
 };
