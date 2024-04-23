@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { toast } from 'react-toastify';
-import Swal from 'sweetalert2';
 import { useCartPage } from './useCartPage';
 
 export const usePayment = () => {

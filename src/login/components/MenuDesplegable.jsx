@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSignInAlt, faSignOutAlt, faUserPlus } from '@fortawesome/free-solid-svg-icons';
+
 
 export const MenuDesplegable = ({ setAuth }) => {
   const [mostrarMenu, setMostrarMenu] = useState(false);
@@ -12,6 +14,7 @@ export const MenuDesplegable = ({ setAuth }) => {
   
   const handleLogout = () => {
     localStorage.removeItem('user'); // Aquí utilizamos setAuth para manejar el cierre de sesión
+    toast.success('cierre de sesion exitosa!.', { position: "bottom-right" });
     setMostrarMenu(false);
   };
 
@@ -23,11 +26,8 @@ export const MenuDesplegable = ({ setAuth }) => {
         className="btn btn-ghost btn-circle avatar "
         onClick={toggleMenu}
       >
-        <div className="w-12 rounded-full">
-          <img
-            alt="Avatar"
-            src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
-          />
+        <div className="w-12 rounded-full mt-2">
+        <i class="fa-regular fa-circle-user fa-2x"></i>
         </div>
       </button>
       {mostrarMenu && (
