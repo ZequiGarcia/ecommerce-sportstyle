@@ -3,32 +3,31 @@ import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 export const useLogin = ({ setAuth }) => {
-    const [correo, setCorreo] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
   
     const handleSubmit = (e) => {
       e.preventDefault();
-      const registeredCorreo = JSON.parse(localStorage.getItem('user'));
+      const registeredUser = JSON.parse(localStorage.getItem('user'));
   
-      if (registeredCorreo && registeredCorreo.correo === correo && registeredCorreo.password === password) {
+      if (registeredUser && registeredUser.email === email && registeredUser.password === password) {
         setAuth(true);
         navigate('/'); 
       } else {
         Swal.fire({
           icon: 'error',
           title: 'Oops...',
-          text: 'Correo o contraseña incorrectos, por favor intenta de nuevo.',
+          text: 'Correo electrónico o contraseña incorrectos, por favor intenta de nuevo.',
         });
       }
     };
 
     return {
-        correo,
-        setCorreo,
+        email,
+        setEmail,
         password,
         setPassword,
         handleSubmit,
-
     }
 }

@@ -40,10 +40,7 @@ export const Header = ({ isAuth, setAuth }) => {
     };
   }, []);
 
-  const handleLogout = () => {
-    localStorage.removeItem('user');
-    setAuth(false);
-  };
+
   return (
     <div className="navbar bg-base-100 bg-neutral text-primary-content">
       <div className="-content-end">
@@ -58,19 +55,7 @@ export const Header = ({ isAuth, setAuth }) => {
             <li><Link to="/"><FontAwesomeIcon icon={faHome} className="mr-2" />Inicio</Link></li>
             <li><Link to="/tienda"><FontAwesomeIcon icon={faStore} className="mr-2" />Tienda</Link></li>
             <li><Link to="/nosotros"><FontAwesomeIcon icon={faUserFriends} className="mr-2" />Nosotros</Link></li>
-            {isAuth ? (
-              <li>
-                <button onClick={handleLogout} className="text-white text-decoration-none fs-3 fuente">
-                  <FontAwesomeIcon icon={faSignOutAlt} className="mr-2" />Cerrar Sesión
-                </button>
-              </li>
-            ) : (
-              <>
-                <li><Link to="/login"><FontAwesomeIcon icon={faSignInAlt} className="mr-2" />Login</Link></li>
-                <li><Link to="/registro"><FontAwesomeIcon icon={faUserPlus} className="mr-2" />Registro</Link></li>
-                
-              </>
-            )}
+            {}
           </ul>    
         </div>
       </div>
@@ -79,13 +64,7 @@ export const Header = ({ isAuth, setAuth }) => {
           <li><Link to="/"><FontAwesomeIcon icon={faHome} className="mr-2" />Inicio</Link></li>
           <li><Link to="/tienda"><FontAwesomeIcon icon={faStore} className="mr-2" />Tienda</Link></li>
           <li><Link to="/nosotros"><FontAwesomeIcon icon={faUserFriends} className="mr-2" />Nosotros</Link></li>
-          { (
-            <li>
-              <button onClick={handleLogout} className="text-white text-decoration-none fs-3 fuente">
-                 <FontAwesomeIcon icon={faSignOutAlt} className="mr-2" />Cerrar Sesión
-              </button>
-            </li>
-          ) }
+         
         </ul>  
       </div>
       <div className="dropdown  dropdown-end">
@@ -105,7 +84,7 @@ export const Header = ({ isAuth, setAuth }) => {
           </div>
         </div>
       </div>
-      <MenuDesplegable className="pl - 7"/>
+      <MenuDesplegable className="pr -23"/>
   </div>
   );
 };

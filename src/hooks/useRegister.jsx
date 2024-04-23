@@ -2,14 +2,14 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
- export function useRegister() {
-  const [user, setUser] = useState('');
+export function useRegister() {
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newUser = { user, password };
+    const newUser = { email, password };
   
     localStorage.setItem('user', JSON.stringify(newUser));
     Swal.fire({
@@ -23,10 +23,10 @@ import Swal from 'sweetalert2';
     });
   };
 
-  return{
+  return {
     handleSubmit,
-    user,
-    setUser,
+    email,
+    setEmail,
     password,
     setPassword,
   }
