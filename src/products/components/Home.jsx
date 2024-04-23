@@ -147,7 +147,11 @@ const Home = () => {
                       src={brand.image}
                       alt={brand.name}
                       className="max-w-full h-auto"
-                      style={{ maxHeight: "400px", minHeight: "200px", maxWidth: "600px", minWidth: "400px" }} // Establecemos un mínimo y máximo de altura
+                      style={{
+                        width: "600px",
+                        height: "300px",
+                        margin: "0 auto",
+                      }}
                     />
                     <p className="mt-2 text-gray-700 text-center">
                       {brand.name}
