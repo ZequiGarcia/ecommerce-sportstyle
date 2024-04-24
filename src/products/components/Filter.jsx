@@ -27,7 +27,6 @@ export const Filter = ({ onFilter, onReset }) => {
             name="radio-4"
             className="radio radio-info"
             onClick={handleResetClick} // Maneja el clic en "Todos"
-            checked
           />
           <span>Todos</span>
         </label>
