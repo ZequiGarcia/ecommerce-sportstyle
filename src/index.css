@@ -13,4 +13,16 @@
 .sweet-alert-container {
     z-index: 9999 !important;
   }
+
+  .menu li {
+    display: inline-block;
+    margin-right: 20px;
+    padding-bottom: 5px; /* Espacio para la línea inferior */
+    cursor: pointer;
+    border-bottom: 2px solid transparent; /* Línea inferior transparente por defecto */
+  }
+  
+  .menu li.active {
+    border-bottom-color: blue; /* Color de la línea inferior cuando el elemento está activo */
+  }
   

@@ -44,7 +44,7 @@ export const Header = ({ isAuth, setAuth }) => {
   return (
     <div className="navbar bg-base-100 bg-neutral text-primary-content">
       <div className="content-end">
-        <Link to="/" className={isActiveLink('/')}>
+        <Link to="/">
           <img src={logo} alt="Logo" className="h-20" />
         </Link>
       </div>
