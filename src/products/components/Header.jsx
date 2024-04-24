@@ -38,7 +38,7 @@ export const Header = ({ isAuth, setAuth }) => {
 
   // Función para determinar si un enlace está activo
   const isActiveLink = (pathname) => {
-    return location.pathname === pathname ? 'border-b-2 border-orange-500' : '';
+    return location.pathname === pathname ? 'border-b-2 border-cyan-500' : '';
   };
 
   return (
