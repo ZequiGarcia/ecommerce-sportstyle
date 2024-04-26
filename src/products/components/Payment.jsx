@@ -64,7 +64,7 @@ export const Payment = () => {
           <div className="form-control mt-2 w-full max-w-xs">
             <label htmlFor="cvv">CVV (3 dígitos)</label>
             <input
-              type="text"
+              type="password"
               id="cvv"
               placeholder="Ingrese CVV"
               className="input input-bordered input-accent w-full max-w-xs text-center"
